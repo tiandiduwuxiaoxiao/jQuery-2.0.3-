@@ -1,0 +1,13 @@
+1.注释
+  (#13335) jQuery官网底部有个bugs的链接，把#13335输入搜索框，可以找到详细的注释；
+2.匿名函数自执行
+(function(window,undefine){
+  //window是最顶端的对象，查找比较慢。用传参的方式提高查找速度。同时，在压缩的时候可以对window变量进行压缩；
+  //undefine是window的属性，不是保留字，在某些版本浏览器中可以被更改，传参是防止被修改；
+})(window)
+3.严格模式
+"use strict";//有益规范代码，但jQuery不推荐使用严格模式，回导致某些版本火狐假死，以及服务端用.net时，会出现某些问题。
+4.第一部分
+变量：rootjQuery【jQuery(document)】:优势：压缩及维护
+     readyList:dom加载相关
+     core_strundefined = typeof undefine
